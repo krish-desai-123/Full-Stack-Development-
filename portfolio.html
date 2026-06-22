@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krish Desai - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Krish Desai</div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1>Hi, I'm Krish Desai</h1>
+                <h2>BSc IT Student & Data Enthusiast</h2>
+                <p>Passionate about data analysis, algorithmic trading, and software development.</p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>I am a computer science and information technology student based in Surat, Gujarat. I have a strong foundation in programming and an active interest in statistics, data science, and analytical modeling. Currently, I am focused on building practical data applications and preparing for a Master's in Computer Science in the US.</p>
+
+                <div class="education-block">
+                    <h3>Education</h3>
+                    <div class="education-details">
+                        <p class="degree"><strong>Bachelor of Science in Information Technology (BSc IT)</strong></p>
+                        <p class="university">P.P. Savani University</p>
+                        <p class="timeline">4th Year (Current) | Enrollment No: 23SS02IT038</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">SQL</span>
+                <span class="skill-badge">Data Analysis</span>
+                <span class="skill-badge">Pine Script / TradingView</span>
+                <span class="skill-badge">Statistics & Probability</span>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+
+                <article class="project-card">
+                    <h3>Expectation Decider</h3>
+                    <p class="date">Jan 2026</p>
+                    <p>A Python-based application built in Jupyter/PyCharm that utilizes Bayes' Theorem and probability concepts to analyze student dataset parameters.</p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Telecom Churn Analysis</h3>
+                    <p class="date">Jan 2026</p>
+                    <p>A major college project focused on exploring and processing a comprehensive telecom dataset utilizing complex SQL queries to identify customer retention trends.</p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Algorithmic Trading Indicators</h3>
+                    <p class="date">Ongoing</p>
+                    <p>Developing custom trading indicators and pattern-recognition algorithms using Pine Script to assist in trading cryptocurrency and commodities.</p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Smart Converter</h3>
+                    <p class="date">Sep 2025</p>
+                    <p>A desktop utility application built to handle fast and efficient data or file conversions locally on Windows.</p>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>Let's connect!</p>
+        <div class="social-links">
+            <a href="http://linkedin.com/in/krishdesai123/">LinkedIn</a>
+            <a href="https://github.com/krish-desai-123">GitHub</a>
+            <a href="mailto:contact@example.com">Email Me</a>
+        </div>
+        <p class="copyright">&copy; 2026 Krish Desai. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section, footer');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    // Adjust offset to trigger highlight at the right moment
+                    if (pageYOffset >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
